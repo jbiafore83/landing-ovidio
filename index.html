@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ovidio Biafore | Consultor y Coach Ejecutivo</title>
+  <meta name="description" content="Consultoría y coaching ejecutivo para organizaciones que buscan excelencia operacional, desarrollo de liderazgo y mejora continua.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f5f7fb;
+      --card:#ffffff;
+      --primary:#0d3b66;
+      --accent:#faa916;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --ring: rgba(13,59,102,.12);
+      --ink:#0b0b0b;
+      --wa:#25D366;
+      --li:#0A66C2;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter: blur(10px);border-bottom:1px solid #eef0f4}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-badge{width:36px;height:36px;border-radius:50%;background:var(--primary);display:grid;place-items:center;color:#fff;font-weight:800;font-family:"Playfair Display",serif;letter-spacing:.5px}
+    .logo-text{font-weight:700}
+    .nav a{padding:10px 12px;text-decoration:none;color:var(--text);font-weight:600}
+    .nav a:hover{color:var(--primary)}
+    /* HERO */
+    header{padding:60px 0 30px;background:radial-gradient(1200px 600px at 20% 0%, #e8f0fb, transparent);}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+    .hero h1{font-family:'Playfair Display',serif;font-size:48px;line-height:1.08;margin:0;color:var(--primary)}
+    .hero p{font-size:18px;color:#334155;margin:14px 0 22px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;border:1px solid #d7dbe3;background:#fff;color:var(--primary);font-weight:700;text-decoration:none}
+    .btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 16px var(--ring)}
+    .portrait-wrap{display:grid;place-items:center}
+    .portrait{width:260px;height:260px;border-radius:50%;object-fit:cover;box-shadow:0 20px 50px var(--ring);border:6px solid #fff}
+    /* SECTIONS */
+    section{padding:56px 0}
+    h2{font-family:"Playfair Display",serif;font-size:32px;color:#0d3b66;margin:0 0 16px}
+    p{line-height:1.7}
+    .lead{font-size:18px;color:#374151}
+    /* GRID */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    /* CARDS */
+    .card{grid-column:span 6;background:var(--card);border:1px solid #eef0f4;border-radius:16px;padding:18px 16px;box-shadow:0 8px 20px var(--ring)}
+    .category .card{display:flex;gap:10px;align-items:flex-start}
+    .card h4{margin:8px 0 6px;font-size:18px;color:#0f172a}
+    .card p{margin:0;color:#4b5563}
+    /* ICONS */
+    .icon{width:48px;height:48px;border-radius:12px;display:inline-grid;place-items:center;background:#eef2ff;margin-right:10px;box-shadow:inset 0 0 0 1px #d8defe;flex:0 0 auto}
+    .icon svg{width:26px;height:26px;display:block}
+    .icon .a{stroke:#0d3b66;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;fill:none}
+    .icon .b{fill:#0d3b66;opacity:.08}
+    /* CATEGORY BLOCKS */
+    .category{grid-column:span 12;background:#fff;border:1px solid #eef0f4;border-radius:18px;padding:18px 18px 8px;box-shadow:0 8px 20px var(--ring)}
+    .cat-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .cat-title{display:flex;align-items:center;gap:14px}
+    /* DOUBLE SIZE BADGES */
+    .cat-title .badge{width:76px;height:76px;border-radius:16px;display:grid;place-items:center;background:#e9eef8;box-shadow:inset 0 0 0 1px #dde5f3;overflow:hidden}
+    .cat-title .badge img{width:100%;height:100%;object-fit:contain;padding:8px;display:block}
+    .cat-title h3{margin:0;font-size:24px;color:#0d3b66}
+    /* QUOTE */
+    .quote{margin:24px 0;background:#fff;border:1px dashed #e5e7eb;border-left:4px solid #faa916;padding:16px 18px;border-radius:12px;color:#475569;font-style:italic;transition:opacity .35s ease}
+    /* TESTIMONIOS */
+    .testi{grid-column:span 4;background:var(--card);border:1px solid #eef0f4;border-radius:16px;padding:16px;box-shadow:0 8px 20px var(--ring)}
+    .testi .who{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .avatar{width:34px;height:34px;border-radius:50%;background:#e2e8f0}
+    .rating{font-size:14px;color:#f59e0b}
+    /* BLOG */
+    .post{grid-column:span 4;background:var(--card);border:1px solid #eef0f4;border-radius:16px;overflow:hidden;box-shadow:0 8px 20px var(--ring)}
+    .post img{width:100%;height:180px;object-fit:cover}
+    .post .p{padding:12px 14px}
+    .post .p h4{margin:0}
+    .post .p a{text-decoration:none;color:#0d3b66;font-weight:800}
+    .post .p a:hover{text-decoration:underline}
+    /* CONTACTO */
+    .contacto{background:linear-gradient(180deg,#ffffff,#f5f7fb);border-top:2px solid #eef0f4}
+    .contact-cards .card{grid-column:span 4}
+    .contact-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .contact-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .clink{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;text-decoration:none;font-weight:700}
+    .clink svg{width:22px;height:22px;display:block}
+    .clink img{width:22px;height:22px;display:block}
+    .clink.wa{color:#25D366;border-color:rgba(37,211,102,.4)}
+    .clink.li{color:#0A66C2;border-color:rgba(10,102,194,.35)}
+    .clink:hover{transform:translateY(-1px);box-shadow:0 8px 16px var(--ring)}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+    form input, form textarea{
+      width:100%;
+      padding:12px;
+      border:2px solid var(--ink);
+      border-radius:10px;
+      font-size:15px;
+      background:#fff;
+      outline:none;
+      transition:border-color .2s, box-shadow .2s;
+    }
+    form input::placeholder, form textarea::placeholder{color:#6b7280}
+    form textarea{grid-column:span 2;min-height:120px}
+    form input:focus, form textarea:focus{
+      border-color:var(--primary);
+      box-shadow:0 0 0 3px rgba(13,59,102,.15);
+    }
+    form button{grid-column:span 2}
+    /* FOOTER */
+    footer{padding:26px 0;background:var(--primary);color:#fff;text-align:center;margin-top:10px}
+    /* RESPONSIVE */
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .portrait{width:200px;height:200px}
+      .card,.testi,.post,.contact-cards .card{grid-column:span 12}
+      .category .card{grid-column:span 12}
+      .contact-row{flex-direction:column;align-items:flex-start}
+      form{grid-template-columns:1fr}
+      form textarea, form button{grid-column:span 1}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-badge">OB</span>
+        <span class="logo-text">Ovidio Biafore</span>
+      </a>
+      <div class="links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#blog">Historias</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="container hero">
+      <div>
+        <h1>Consultor & Coach Ejecutivo</h1>
+        <p class="lead">Más de 30 años liderando equipos y operaciones. Ayudo a directivos y organizaciones a ejecutar mejor: foco, procesos y resultados.</p>
+        <div id="quote" class="quote" aria-live="polite"></div>
+        <div class="cta">
+          <a class="btn primary" href="#contacto">Trabajemos juntos</a>
+          <a class="btn" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <img class="portrait" src="foto_ovidio-biafore.png" alt="Ovidio Biafore" loading="lazy">
+      </div>
+    </div>
+  </header>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi">
+    <div class="container">
+      <h2>¿Quién soy?</h2>
+      <p class="lead">Ex director de la filial local de una compañía química global. Entrenado en el exterior, integré equipos regionales y globales diseñando estrategias y liderando operaciones comerciales, administrativas y financieras.</p>
+      <p>Conduje equipos en funciones operativas y comerciales; conozco auditorías, control interno y mejora continua. Traigo una mirada integral y práctica para impulsar organizaciones reales con problemas reales.</p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <h2>Servicios</h2>
+      <p class="lead">Dos frentes que se complementan: <strong>Consultoría en Gestión</strong> para ordenar y escalar, y <strong>Coaching Ejecutivo</strong> para desarrollar a las personas y los equipos.</p>
+
+      <div class="grid">
+        <!-- Consultoría en Gestión -->
+        <div class="category" id="consultoria">
+          <div class="cat-head">
+            <div class="cat-title">
+              <div class="badge" title="Consultoría">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBiStBK64a06Q3zTt17rSkZpF8oaG7dOR1JQ&s" alt="Consulting logo">
+              </div>
+              <h3>Consultoría en Gestión</h3>
+            </div>
+            <a class="btn" href="#contacto">Ver más información</a>
+          </div>
+          <div class="grid">
+            <!-- 2x2 layout so no single card is left alone -->
+            <div class="card" style="grid-column:span 6;">
+              <div class="icon" title="Gestión del Negocio">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="b" cx="12" cy="12" r="10"></circle>
+                  <path class="a" d="M7 15l3-3 2 2 5-5M7 7h4"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Gestión del Negocio</h4>
+                <p>Planeamiento, presupuestos, segmentación, enfoque al cliente y negociación.</p>
+              </div>
+            </div>
+            <div class="card" style="grid-column:span 6;">
+              <div class="icon" title="Excelencia Operacional">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="b" cx="12" cy="12" r="10"></circle>
+                  <path class="a" d="M12 8l.8 1.6 1.8.4-1.2 1.4.2 1.8-1.6-.6-1.6.6.2-1.8-1.2-1.4 1.8-.4L12 8z"></path>
+                  <path class="a" d="M15.2 15.6l1.8 1.8 3-3"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Excelencia Operacional</h4>
+                <p>Procesos, proyectos y mejora continua con estándares claros y auditorías simples.</p>
+              </div>
+            </div>
+            <div class="card" style="grid-column:span 6;">
+              <div class="icon" title="Control de Gestión">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="b" cx="12" cy="12" r="10"></circle>
+                  <path class="a" d="M4 16h4l3-6 3 4 2-3 4 5"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Control de Gestión</h4>
+                <p>Métricas, flujo de fondos, riesgos e inversiones para decidir con datos.</p>
+              </div>
+            </div>
+            <div class="card" style="grid-column:span 6;">
+              <div class="icon" title="Recursos Humanos">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="b" cx="12" cy="12" r="10"></circle>
+                  <path class="a" d="M8 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                  <path class="a" d="M3 20a6 6 0 0 1 10 0M11 20a6 6 0 0 1 10-4"></path>
+                  <path class="a" d="M14.5 15.5l1.8 1.8 2.8-2.8"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Recursos Humanos</h4>
+                <p>Objetivos, feedback, gestión del desempeño y desarrollo de talento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coaching Ejecutivo -->
+        <div class="category" id="coaching">
+          <div class="cat-head">
+            <div class="cat-title">
+              <div class="badge" title="Coaching">
+                <img src="https://static.vecteezy.com/system/resources/previews/002/133/089/non_2x/coaching-rgb-color-icon-vector.jpg" alt="Coaching logo">
+              </div>
+              <h3>Coaching Ejecutivo</h3>
+            </div>
+            <a class="btn" href="#contacto">Ver programas y enfoque</a>
+          </div>
+          <div class="grid">
+            <div class="card">
+              <div class="icon" title="Desarrollo Individual">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="b" cx="12" cy="12" r="10"></circle>
+                  <path class="a" d="M12 13a4 4 0 1 0-4-4M5 20a7 7 0 0 1 14 0"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Desarrollo Individual</h4>
+                <p>Autoconocimiento, foco, comunicación y hábitos de alto desempeño.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="icon" title="Desarrollo en Equipos">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle class="b" cx="12" cy="12" r="10"></circle>
+                  <path class="a" d="M8 11a2.8 2.8 0 1 0 0-5.6A2.8 2.8 0 0 0 8 11zM16 11a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zM12 12.5a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2z"></path>
+                  <path class="a" d="M6 20a5.5 5.5 0 0 1 5-3 5.5 5.5 0 0 1 5 3"></path>
+                  <path class="a" d="M7.5 9.5l3 1.5M16.5 9.5l-3 1.5"></path>
+                </svg>
+              </div>
+              <div>
+                <h4>Desarrollo en Equipos</h4>
+                <p>Objetivos compartidos, decisiones claras y rituales que mantienen el ritmo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios">
+    <div class="container">
+      <h2>Testimonios</h2>
+      <div class="grid">
+        <div class="testi">
+          <div class="who">
+            <div class="avatar"></div>
+            <div>
+              <strong>Gerente General</strong><div class="rating">★★★★★</div>
+            </div>
+          </div>
+          “Pasamos de diagnósticos eternos a un plan claro con métricas. El equipo volvió a moverse en la misma dirección.”
+        </div>
+        <div class="testi">
+          <div class="who">
+            <div class="avatar"></div>
+            <div>
+              <strong>Directora Comercial</strong><div class="rating">★★★★★</div>
+            </div>
+          </div>
+          “Su mirada operativa + humana nos ayudó a ordenar procesos sin perder agilidad.”
+        </div>
+        <div class="testi">
+          <div class="who">
+            <div class="avatar"></div>
+            <div>
+              <strong>Head de Operaciones</strong><div class="rating">★★★★★</div>
+            </div>
+          </div>
+          “Coaching directo, cero humo. Salimos de cada sesión con decisiones y dueños claros.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="container">
+      <h2>Historias de Coaching</h2>
+      <p class="lead">Casos reales. Hacé clic en el título para leer el detalle.</p>
+      <div class="grid">
+        <article class="post">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop" alt="CEO PyME logística">
+          <div class="p">
+            <h4><a href="historia-ceo-logistica.html" target="_blank" rel="noopener">CEO PyME logística: agenda estratégica en 90 días</a></h4>
+          </div>
+        </article>
+        <article class="post">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Squad Comercial SaaS">
+          <div class="p">
+            <h4><a href="historia-squad-saas.html" target="_blank" rel="noopener">Squad Comercial SaaS: cadencia de decisión</a></h4>
+          </div>
+        </article>
+        <article class="post">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="Directora de Operaciones">
+          <div class="p">
+            <h4><a href="historia-directora-operaciones.html" target="_blank" rel="noopener">Directora de Operaciones: feedback que no quema</a></h4>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <div class="grid contact-cards">
+        <div class="card">
+          <h4>Email</h4>
+          <p><a href="mailto:ovidio.biafore@outlook.com">ovidio.biafore@outlook.com</a></p>
+          <div class="contact-links" style="margin-top:6px;">
+            <a class="clink li" href="https://www.linkedin.com/in/ovidio-biafore-9a554a199/" target="_blank" rel="noopener" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.13 1.44-2.13 2.93v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.41-1.85 3.65 0 4.33 2.4 4.33 5.52v6.22ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Teléfono</h4>
+          <div class="contact-row">
+            <p style="margin:0;"><a href="tel:+541144726606">+54 11 4472 6606</a></p>
+          </div>
+          <div class="contact-links">
+            <a class="clink wa" href="https://wa.me/5491144726606" target="_blank" rel="noopener" title="WhatsApp">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Logo de WhatsApp">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Agenda una llamada</h4>
+          <p>Coordinemos 30' para entender tu contexto y armar un plan.</p>
+        </div>
+      </div>
+
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <textarea name="mensaje" placeholder="Contame en 2 líneas tu objetivo principal" required></textarea>
+        <button class="btn primary" type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <small>© 2025 Ovidio Biafore — Consultor y Coach Ejecutivo</small>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const quotes = [
+        { text: "Desarrollar la conciencia y la responsabilidad es la esencia del coaching eficaz.", author: "John Whitmore" },
+        { text: "Los problemas no pueden ser resueltos en el mismo nivel de pensamiento en el que surgieron.", author: "Albert Einstein" },
+        { text: "Trabajar junto con los clientes en un proceso creativo y estimulante que les sirva de inspiración para maximizar su potencial personal y profesional.", author: "ICF" }
+      ];
+      const el = document.getElementById('quote');
+      let i = 0;
+      function render(k){
+        el.style.opacity = 0;
+        setTimeout(()=>{
+          const q = quotes[k];
+          el.innerHTML = `“${q.text}” — ${q.author}`;
+          el.style.opacity = 1;
+        }, 250);
+      }
+      render(i);
+      setInterval(()=>{
+        i = (i + 1) % quotes.length;
+        render(i);
+      }, 6000);
+    })();
+  </script>
+</body>
+</html>
